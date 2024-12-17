@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+{% endblock %}
+
+{% block title %}
+Database
+{% endblock %}
+
+{% block content %}
+<div class="flex-box-text">
+    <div class="inner-flex-box">
+        <div class="black">
+            {{table_name}}
+        </div>
+        <div class="container">
+            <div class="table-responsive">
+              <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            {% for column in column_names %}
+                                <th>{{ column }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in paginationData %}
+                            <tr>
+                                {% for column in column_names %}
+                                    <td>{{ row[column] }}</td>
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+              </table>
+            </div>
+            {{ pagination.links }}
+        </div>
+            <div class="text-center mt-4">
+                <a href="/" class="btn btn-primary">Back to Homepage</a>
+            </div>
+          </div>
+    </div>
+</div>
+{% endblock %}

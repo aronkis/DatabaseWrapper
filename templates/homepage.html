@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+{% endblock %}
+
+{% block title %}
+HomePage
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center">Welcome to the Workshop</h1>
+    
+    <div class="text-center mt-4">
+        <label for="dropdown">Select a table:</label>
+        <!-- Form wraps the dropdown and the button -->
+        <form method="POST">
+            <select id="dropdown" name="dropdown" class="form-control w-25 mx-auto">
+                {% for option in options %}
+                    <option value="{{ option }}" {% if option == selected_option %} selected {% endif %}>{{ option }}</option>
+                {% endfor %}
+            </select>            
+            <button type="submit" name="action" value="List" class="btn btn-primary mt-3">List </button>
+            <button type="submit" name="action" value="Update" class="btn btn-primary mt-3">Update</button>
+            <button type="submit" name="action" value="Alter" class="btn btn-primary mt-3">Alter</button>
+            <button type="submit" name="action" value="Problems" class="btn btn-secondary mt-3">Problems</button>
+        </form>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+{% endblock %}

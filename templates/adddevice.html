@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+{% endblock %}
+
+{% block title %}
+Database
+{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-center">
+    <div class="text-center mt-4">
+        <h2 class="text-center mb-4">Submit Your Details to {{table_name}}</h2>
+        <form method="POST">
+            <div class="form-group row">
+                <label for="entry1" class="col-sm-6">Device's id:</label>
+                <div class="col-sm-3">
+                    <input type="text" id="entry1" name="device_id" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="entry2" class="col-sm-6">Devices's client id:</label>
+                <div class="col-sm-3">
+                    <input type="text" id="entry2" name="device_client_id" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="entry3" class="col-sm-6">Devices's operator id:</label>
+                <div class="col-sm-3">
+                    <input type="text" id="entry3" name="device_operator_id" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="entry4" class="col-sm-6">Device name:</label required>
+                <div class="col-sm-3">
+                    <input type="text" id="entry4" name="device_name">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="entry4" class="col-sm-6">Device entry date:</label required>
+                <div class="col-sm-3">
+                    <input type="text" id="entry5" name="device_entry_date">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="entry4" class="col-sm-6">Device confirmation date:</label required>
+                <div class="col-sm-3">
+                    <input type="text" id="entry6" name="device_confirmation_date">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="entry4" class="col-sm-6">Device finalization date:</label required>
+                <div class="col-sm-3">
+                    <input type="text" id="entry7" name="device_finalization_date">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="entry4" class="col-sm-6">Device symptoms:</label required>
+                <div class="col-sm-3">
+                    <input type="text" id="entry8" name="device_symptoms">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="entry4" class="col-sm-6">Device defect:</label>
+                <div class="col-sm-3">
+                    <input type="text" id="entry9" name="device_defect" value="-">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="entry4" class="col-sm-6">Device repair time:</label>
+                <div class="col-sm-3">
+                    <input type="text" id="entry10" name="device_repair_time" value="0">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="entry4" class="col-sm-6">Device repair hours:</label>
+                <div class="col-sm-3">
+                    <input type="text" id="entry11" name="device_repair_hours" value="0">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="entry4" class="col-sm-6">Device total:</label>
+                <div class="col-sm-3">
+                    <input type="text" id="entry12" name="device_total" value="0">
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <button type="submit" name="action" value="List" class="btn btn-primary">Insert</button>
+            </div>
+        </form>
+        <div class="text-center mt-4">
+            <a href="/" class="btn btn-secondary">Back to Homepage</a>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+{% endblock %}
